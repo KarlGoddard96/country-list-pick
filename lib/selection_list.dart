@@ -31,6 +31,7 @@ class _SelectionListState extends State<SelectionList> {
   double _offsetContainer = 0.0;
 
   bool isShow = true;
+  bool _isDarkMode;
 
   @override
   void initState() {
@@ -78,6 +79,7 @@ class _SelectionListState extends State<SelectionList> {
 
   @override
   Widget build(BuildContext context) {
+    this._isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
@@ -85,7 +87,7 @@ class _SelectionListState extends State<SelectionList> {
         centerTitle: true,
       ),
       body: Container(
-        color: Color(0xfff4f4f4),
+        color: _isDarkMode ? Color(0xff494949) : Color(0xfff4f4f4),
         child: LayoutBuilder(builder: (context, contrainsts) {
           diff = height - contrainsts.biggest.height;
           _heightscroller = (contrainsts.biggest.height) / _alphabet.length;
@@ -100,7 +102,7 @@ class _SelectionListState extends State<SelectionList> {
                     child: Text('SEARCH'),
                   ),
                   Container(
-                    color: Colors.white,
+                    color: _isDarkMode ? Colors.black : Colors.white,
                     padding: EdgeInsets.all(20.0),
                     child: TextField(
                       controller: _controller,
@@ -115,7 +117,7 @@ class _SelectionListState extends State<SelectionList> {
                     child: Text('LAST PICK'),
                   ),
                   Container(
-                    color: Colors.white,
+                    color: _isDarkMode ? Colors.black : Colors.white,
                     child: ListTile(
                       leading: Image.asset(
                         widget.initialSelection.flagUri,
@@ -165,7 +167,7 @@ class _SelectionListState extends State<SelectionList> {
   Widget getListCountry(CountryCode e) {
     return Container(
       height: 50,
-      color: Colors.white,
+      color: _isDarkMode ? Colors.black : Colors.white,
       child: ListTile(
         leading: Image.asset(
           e.flagUri,
