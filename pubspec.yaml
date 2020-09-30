@@ -26,13 +26,14 @@ flutter:
   plugin:
     # androidPackage: id.duende.country_list_pick
     # pluginClass: CountryListPickPlugin
-    android:
-      package: id.duende.country_list_pick
-      pluginClass: CountryListPickPlugin
-    ios:
-      pluginClass: CountryListPickPlugin
-    macos:
-      pluginClass: CountryListPickPlugin
+    platforms:
+      android:
+        package: id.duende.country_list_pick
+        pluginClass: CountryListPickPlugin
+      ios:
+        pluginClass: CountryListPickPlugin
+      macos:
+        pluginClass: CountryListPickPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   assets:
