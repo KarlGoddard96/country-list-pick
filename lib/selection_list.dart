@@ -145,7 +145,7 @@ class _SelectionListState extends State<SelectionList> {
                         Container(
                           color: _isDarkMode ? Colors.black : Colors.white,
                           child: Material(
-                            color: Colors.transparent,
+                            color: _isDarkMode ? Colors.black : Colors.white,
                             child: ListTile(
                               leading: Image.asset(
                                 widget.initialSelection.flagUri,
@@ -203,7 +203,7 @@ class _SelectionListState extends State<SelectionList> {
   Widget getListCountry(CountryCode e) {
     return Container(
       height: 50,
-      color: Colors.white,
+      color: _isDarkMode ? Colors.black : Colors.white,
       child: Material(
         color: Colors.transparent,
         child: ListTile(
