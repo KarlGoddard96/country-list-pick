@@ -95,6 +95,7 @@ class _SelectionListState extends State<SelectionList> {
       statusBarBrightness:
           Platform.isAndroid ? Brightness.dark : Brightness.light,
     ));
+    this._isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: widget.appBar,
