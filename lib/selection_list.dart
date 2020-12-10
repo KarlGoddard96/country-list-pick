@@ -271,7 +271,7 @@ class _SelectionListState extends State<SelectionList> {
   }
 
   void _filterElements(String s) {
-    s = s.toUpperCase();
+    s = s.toUpperCase().trim();
     setState(() {
       countries = widget.elements
           .where((e) =>
