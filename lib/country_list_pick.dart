@@ -74,7 +74,7 @@ class _CountryListPickState extends State<CountryListPick> {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () {
         _awaitFromSelectScreen(context);
       },
